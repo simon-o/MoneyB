@@ -15,6 +15,7 @@ protocol InvestorProductsPresenterProtocol {
     func buildCell(cell: InvestorTableViewCellProtocol, index: Int)
     func buildHeader(header: InvestorProductsHeader)
     func getProductsCount() -> Int
+    func getProductFor(index: Int) -> ProductResponsesModel?
 }
 
 final class InvestorProductsPresenter {
@@ -32,6 +33,10 @@ final class InvestorProductsPresenter {
 }
 
 extension InvestorProductsPresenter: InvestorProductsPresenterProtocol {
+    func getProductFor(index: Int) -> ProductResponsesModel? {
+        return investorModel?.ProductResponses[index]
+    }
+    
     func getProductsCount() -> Int {
         return investorModel?.ProductResponses.count ?? 0
     }

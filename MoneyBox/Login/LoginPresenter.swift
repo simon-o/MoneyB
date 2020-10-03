@@ -17,13 +17,13 @@ protocol LoginPresenterProtocol {
 
 final class LoginPresenter {
     private weak var viewController: LoginViewControllerProtocol?
-    private let service: LoginService
+    private let service: LoginServiceProtocol
     private var cancellable: AnyCancellable?
     private var cancellable2: AnyCancellable?
     private let userDefault: UserDefaults
     @Published private var loginModel: LoginModel?
     
-    init(service: LoginService = LoginService(), userDefault: UserDefaults = .standard) {
+    init(service: LoginServiceProtocol = LoginService(), userDefault: UserDefaults = .standard) {
         self.service = service
         self.userDefault = userDefault
     }

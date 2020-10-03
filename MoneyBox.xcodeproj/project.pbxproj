@@ -27,6 +27,11 @@
 		2D58A7BC2528B015001C83A6 /* InvestorProductsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D58A7BB2528B015001C83A6 /* InvestorProductsHeader.xib */; };
 		2D58A7C52528BDBA001C83A6 /* InvestorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D58A7C32528BDBA001C83A6 /* InvestorTableViewCell.swift */; };
 		2D58A7C62528BDBA001C83A6 /* InvestorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D58A7C42528BDBA001C83A6 /* InvestorTableViewCell.xib */; };
+		2D8146F42528C65200E64036 /* LoginPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8146F32528C65200E64036 /* LoginPresenterTest.swift */; };
+		2D8147042528CFE900E64036 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8147022528CFE900E64036 /* AccountViewController.swift */; };
+		2D8147052528CFE900E64036 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D8147032528CFE900E64036 /* AccountViewController.xib */; };
+		2D81470E2528D02800E64036 /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D81470D2528D02800E64036 /* AccountPresenter.swift */; };
+		2D8147132528D03300E64036 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8147122528D03300E64036 /* AccountService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +78,11 @@
 		2D58A7BB2528B015001C83A6 /* InvestorProductsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvestorProductsHeader.xib; sourceTree = "<group>"; };
 		2D58A7C32528BDBA001C83A6 /* InvestorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestorTableViewCell.swift; sourceTree = "<group>"; };
 		2D58A7C42528BDBA001C83A6 /* InvestorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvestorTableViewCell.xib; sourceTree = "<group>"; };
+		2D8146F32528C65200E64036 /* LoginPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTest.swift; sourceTree = "<group>"; };
+		2D8147022528CFE900E64036 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		2D8147032528CFE900E64036 /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
+		2D81470D2528D02800E64036 /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
+		2D8147122528D03300E64036 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +135,7 @@
 			children = (
 				2D35D885252890C400FF5A00 /* AppDelegate.swift */,
 				2D35D887252890C400FF5A00 /* SceneDelegate.swift */,
+				2D8147092528CFEF00E64036 /* Account */,
 				2D35D8E0252895F500FF5A00 /* Utility */,
 				2D35D8C8252891F400FF5A00 /* Login */,
 				2D35D8EE2528A61000FF5A00 /* Investor Products */,
@@ -156,6 +167,7 @@
 		2D35D8C8252891F400FF5A00 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				2D8146F82528C65800E64036 /* Test */,
 				2D35D8C22528918000FF5A00 /* LoginViewController.xib */,
 				2D35D8C12528918000FF5A00 /* LoginViewController.swift */,
 				2D35D8CC2528922600FF5A00 /* LoginPresenter.swift */,
@@ -202,6 +214,25 @@
 				2D58A7C32528BDBA001C83A6 /* InvestorTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2D8146F82528C65800E64036 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				2D8146F32528C65200E64036 /* LoginPresenterTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		2D8147092528CFEF00E64036 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				2D8147032528CFE900E64036 /* AccountViewController.xib */,
+				2D8147022528CFE900E64036 /* AccountViewController.swift */,
+				2D81470D2528D02800E64036 /* AccountPresenter.swift */,
+				2D8147122528D03300E64036 /* AccountService.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D58A7BC2528B015001C83A6 /* InvestorProductsHeader.xib in Resources */,
+				2D8147052528CFE900E64036 /* AccountViewController.xib in Resources */,
 				2D35D892252890CF00FF5A00 /* LaunchScreen.storyboard in Resources */,
 				2D35D8EA2528A60800FF5A00 /* InvestorProductsTableViewController.xib in Resources */,
 				2D58A7C62528BDBA001C83A6 /* InvestorTableViewCell.xib in Resources */,
@@ -337,8 +369,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D81470E2528D02800E64036 /* AccountPresenter.swift in Sources */,
 				2D35D8CD2528922600FF5A00 /* LoginPresenter.swift in Sources */,
 				2D35D8E92528A60800FF5A00 /* InvestorProductsTableViewController.swift in Sources */,
+				2D8147132528D03300E64036 /* AccountService.swift in Sources */,
+				2D8147042528CFE900E64036 /* AccountViewController.swift in Sources */,
 				2D35D8DC2528943500FF5A00 /* UrlFactory.swift in Sources */,
 				2D35D8C32528918000FF5A00 /* LoginViewController.swift in Sources */,
 				2D35D8F02528A63400FF5A00 /* InvestorProductsPresenter.swift in Sources */,
@@ -356,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D8146F42528C65200E64036 /* LoginPresenterTest.swift in Sources */,
 				2D35D89D252890CF00FF5A00 /* MoneyBoxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

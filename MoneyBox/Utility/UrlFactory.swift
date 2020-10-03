@@ -20,6 +20,7 @@ enum typeUrl: String {
 enum apiPath: String {
     case login = "/users/login"
     case investorProducts = "/investorproducts"
+    case individualAccount = "/oneoffpayments"
 }
 
 struct UrlFactory {

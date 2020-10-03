@@ -62,6 +62,15 @@ final class InvestorProductsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let account = self.presenter.getProductFor(index: indexPath.row) {
+            let service = AccountService()
+            let presenter = AccountPresenter(service: service, accountInfo: account)
+            let vc = AccountViewController(presenter: presenter)
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 100.0
     }

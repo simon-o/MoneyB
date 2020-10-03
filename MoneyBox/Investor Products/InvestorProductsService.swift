@@ -40,6 +40,7 @@ struct InverstorProductsModel: Codable {
 }
 
 struct ProductResponsesModel: Codable {
+    var Id: Int
     var PlanValue: Double
     var Moneybox: Double
     var Product: ProductModel
