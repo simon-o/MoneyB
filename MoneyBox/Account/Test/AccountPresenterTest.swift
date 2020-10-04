@@ -66,6 +66,7 @@ class AccountPresenterTest: XCTestCase {
         
         wait(for: [service.expectation], timeout: 10.0)
         XCTAssertEqual(vc.moneybox, "Moneybox: £30.00")
+        XCTAssertEqual(vc.displayFailureCount, 0)
         XCTAssertEqual(completionCount, 1)
     }
     
@@ -83,6 +84,7 @@ class AccountPresenterTest: XCTestCase {
         service.stateSub.send(.failure(Error.unknown(URLResponse.init())))
         
         XCTAssertEqual(vc.moneybox, "Moneybox: £0.00")
+        XCTAssertEqual(vc.displayFailureCount, 1)
         XCTAssertEqual(completionCount, 0)
     }
 }
@@ -107,6 +109,11 @@ class AccountViewControllerMock: AccountViewControllerProtocol {
     var name: String?
     var moneybox: String?
     var planValue: String?
+    var displayFailureCount = 0
+    
+    func displayFailure() {
+        displayFailureCount += 1
+    }
     
     func setAddButton(title: String) {
         self.buttonTitle = title

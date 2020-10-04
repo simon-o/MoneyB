@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D0A39D3252A20AB00991513 /* InvestorProductsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0A39D2252A20AB00991513 /* InvestorProductsPresenterTest.swift */; };
 		2D35D886252890C400FF5A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35D885252890C400FF5A00 /* AppDelegate.swift */; };
 		2D35D888252890C400FF5A00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35D887252890C400FF5A00 /* SceneDelegate.swift */; };
 		2D35D88F252890CF00FF5A00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D35D88E252890CF00FF5A00 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D0A39D2252A20AB00991513 /* InvestorProductsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestorProductsPresenterTest.swift; sourceTree = "<group>"; };
 		2D35D882252890C400FF5A00 /* MoneyBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D35D885252890C400FF5A00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D35D887252890C400FF5A00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D0A39D7252A20AF00991513 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				2D0A39D2252A20AB00991513 /* InvestorProductsPresenterTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		2D35D879252890C400FF5A00 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +200,7 @@
 		2D35D8EE2528A61000FF5A00 /* Investor Products */ = {
 			isa = PBXGroup;
 			children = (
+				2D0A39D7252A20AF00991513 /* Test */,
 				2D58A7B72528AFF5001C83A6 /* Header */,
 				2D58A7CA2528BDBF001C83A6 /* Cell */,
 				2D35D8E82528A60800FF5A00 /* InvestorProductsTableViewController.xib */,
@@ -402,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D0A39D3252A20AB00991513 /* InvestorProductsPresenterTest.swift in Sources */,
 				2D8146F42528C65200E64036 /* LoginPresenterTest.swift in Sources */,
 				2D35D89D252890CF00FF5A00 /* MoneyBoxTests.swift in Sources */,
 				2D81471B2529F9A600E64036 /* AccountPresenterTest.swift in Sources */,

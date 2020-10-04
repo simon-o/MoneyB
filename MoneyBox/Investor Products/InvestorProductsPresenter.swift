@@ -13,7 +13,7 @@ protocol InvestorProductsPresenterProtocol {
     func linkViewController(_ vc: InvestorProductsTableViewControllerProtocol)
     func viewDidLoad()
     func buildCell(cell: InvestorTableViewCellProtocol, index: Int)
-    func buildHeader(header: InvestorProductsHeader)
+    func buildHeader(header: InvestorProductsHeaderProtocol)
     func getProductsCount() -> Int
     func getProductFor(index: Int) -> ProductResponsesModel?
     func reloadView()
@@ -75,14 +75,14 @@ extension InvestorProductsPresenter: InvestorProductsPresenterProtocol {
             }
         requestService()
     }
-     
+    
     func buildCell(cell: InvestorTableViewCellProtocol, index: Int) {
         cell.set(name: investorModel?.ProductResponses[index].Product.FriendlyName ?? "")
         cell.set(planValue: String(format: "Plan Value: £%.2f" ,investorModel?.ProductResponses[index].PlanValue ?? ""))
-                 cell.set(moneyBox: String(format: "Moneybox: £%.2f" ,investorModel?.ProductResponses[index].Moneybox ?? ""))
+        cell.set(moneyBox: String(format: "Moneybox: £%.2f" ,investorModel?.ProductResponses[index].Moneybox ?? ""))
     }
     
-    func buildHeader(header: InvestorProductsHeader) {
+    func buildHeader(header: InvestorProductsHeaderProtocol) {
         header.set(nameLabel: String(format: "Hello %@ %@ !", user.User.LastName, user.User.FirstName ))
         header.set(planValueLabel: String(format: "Total Plan Value: £%.2f", investorModel?.TotalPlanValue ?? 0.0))
     }
