@@ -38,6 +38,13 @@ final class LoginViewController: UIViewController {
         
         presenter.linkViewController(self)
         presenter.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
