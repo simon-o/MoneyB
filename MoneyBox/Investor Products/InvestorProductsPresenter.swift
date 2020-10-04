@@ -25,21 +25,22 @@ final class InvestorProductsPresenter {
     private var cancellable: AnyCancellable?
     private var cancellable2: AnyCancellable?
     private let user: LoginModel
+    private let userDefault: UserDefaults
     @Published private var investorModel: InverstorProductsModel?
     
-    init(service: InvestorProductsServiceProtocol, user: LoginModel) {
+    init(service: InvestorProductsServiceProtocol, user: LoginModel, userDefault: UserDefaults = .standard) {
         self.service = service
         self.user = user
+        self.userDefault = userDefault
     }
     
     private func requestService() {
-        cancellable = service.getInvestorProducts(accessToken: UserDefaults.standard.getToken()).sink(receiveCompletion: { (error) in
+        cancellable = service.getInvestorProducts(accessToken: userDefault.getToken()).sink(receiveCompletion: { (error) in
             print(error)
         }, receiveValue: { (result) in
-            print(result)
             switch result {
-            case let .failure(error):
-                print(error)
+            case .failure(_):
+                self.viewController?.displayFailure()
             case let .success(model):
                 self.investorModel = model
             }

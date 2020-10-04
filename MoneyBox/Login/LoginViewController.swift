@@ -47,7 +47,7 @@ final class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginViewControllerProtocol {
     func loginFailure() {
-        
+        displayGenericErrorAlert()
     }
     
     func loginSuccess() {
@@ -57,7 +57,7 @@ extension LoginViewController: LoginViewControllerProtocol {
             let vc = InvestorProductsTableViewController(presenter: presenter)
             navigationController?.pushViewController(vc, animated: true)
         } else {
-            print("error")
+            loginFailure()
         }
     }
     

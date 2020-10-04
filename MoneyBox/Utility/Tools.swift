@@ -38,3 +38,11 @@ extension UIView {
                                      leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: marginLeading)])
     }
 }
+
+extension UIViewController {
+    func displayGenericErrorAlert() {
+        let alert = UIAlertController(title: "Oops", message: "Something went wrong. Try again.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+}

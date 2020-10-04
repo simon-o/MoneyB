@@ -60,10 +60,9 @@ extension AccountPresenter: AccountPresenterProtocol {
         cancellable = service.addMoney(amount: 10, productId: model.Id, accessToken: UserDefaults.standard.getToken()).sink(receiveCompletion: { (error) in
             print(error)
         }, receiveValue: { (result) in
-            print(result)
             switch result {
-            case let .failure(error):
-                print(error)
+            case .failure(_):
+                self.viewController?.displayFailure()
             case let .success(model):
                 self.accountInfo = model
             }

@@ -40,8 +40,7 @@ final class LoginPresenter {
             return
         }, receiveValue: { (result) in
             switch result {
-            case let .failure(error):
-                print(error)
+            case .failure(_):
                 self.viewController?.loginFailure()
             case let .success(model):
                 print("Success \(model)")

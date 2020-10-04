@@ -9,6 +9,7 @@ import UIKit
 
 protocol InvestorProductsTableViewControllerProtocol: AnyObject {
     func reloadTableView()
+    func displayFailure()
 }
 
 final class InvestorProductsTableViewController: UITableViewController {
@@ -89,6 +90,10 @@ final class InvestorProductsTableViewController: UITableViewController {
 }
 
 extension InvestorProductsTableViewController: InvestorProductsTableViewControllerProtocol {
+    func displayFailure() {
+        displayGenericErrorAlert()
+    }
+    
     func reloadTableView() {
         tableView.reloadData()
     }

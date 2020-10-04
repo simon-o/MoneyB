@@ -12,11 +12,8 @@ protocol AccountViewControllerProtocol: AnyObject {
     func set(name: String)
     func set(moneybox: String)
     func set(planValue: String)
+    func displayFailure()
 }
-
-//protocol AccountViewControllerDelegate: AnyObject {
-//    func informationUpdated()
-//}
 
 final class AccountViewController: UIViewController {
 
@@ -63,5 +60,9 @@ extension AccountViewController: AccountViewControllerProtocol {
     
     func set(planValue: String) {
         planValueLabel.text = planValue
+    }
+    
+    func displayFailure() {
+        displayGenericErrorAlert()
     }
 }
