@@ -16,8 +16,8 @@ final class InvestorProductsTableViewController: UITableViewController {
     private lazy var header: InvestorProductsHeader = {
         guard let tableView = tableView else { fatalError() }
         return InvestorProductsHeader(frame: CGRect(origin: .zero,
-                                                       size: CGSize(width: tableView.frame.width,
-                                                                    height: 100.0)))
+                                                    size: CGSize(width: tableView.frame.width,
+                                                                 height: 100.0)))
     }()
 
     

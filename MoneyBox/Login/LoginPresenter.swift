@@ -42,6 +42,7 @@ final class LoginPresenter {
             switch result {
             case let .failure(error):
                 print(error)
+                self.viewController?.loginFailure()
             case let .success(model):
                 print("Success \(model)")
                 self.loginModel = model

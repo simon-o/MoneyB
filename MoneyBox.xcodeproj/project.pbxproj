@@ -32,6 +32,7 @@
 		2D8147052528CFE900E64036 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D8147032528CFE900E64036 /* AccountViewController.xib */; };
 		2D81470E2528D02800E64036 /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D81470D2528D02800E64036 /* AccountPresenter.swift */; };
 		2D8147132528D03300E64036 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8147122528D03300E64036 /* AccountService.swift */; };
+		2D81471B2529F9A600E64036 /* AccountPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D81471A2529F9A600E64036 /* AccountPresenterTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		2D8147032528CFE900E64036 /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
 		2D81470D2528D02800E64036 /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
 		2D8147122528D03300E64036 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		2D81471A2529F9A600E64036 /* AccountPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenterTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,12 +229,21 @@
 		2D8147092528CFEF00E64036 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				2D81471F2529FD1B00E64036 /* Test */,
 				2D8147032528CFE900E64036 /* AccountViewController.xib */,
 				2D8147022528CFE900E64036 /* AccountViewController.swift */,
 				2D81470D2528D02800E64036 /* AccountPresenter.swift */,
 				2D8147122528D03300E64036 /* AccountService.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		2D81471F2529FD1B00E64036 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				2D81471A2529F9A600E64036 /* AccountPresenterTest.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +404,7 @@
 			files = (
 				2D8146F42528C65200E64036 /* LoginPresenterTest.swift in Sources */,
 				2D35D89D252890CF00FF5A00 /* MoneyBoxTests.swift in Sources */,
+				2D81471B2529F9A600E64036 /* AccountPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
