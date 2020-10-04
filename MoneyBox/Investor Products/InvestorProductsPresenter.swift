@@ -16,6 +16,7 @@ protocol InvestorProductsPresenterProtocol {
     func buildHeader(header: InvestorProductsHeader)
     func getProductsCount() -> Int
     func getProductFor(index: Int) -> ProductResponsesModel?
+    func reloadView()
 }
 
 final class InvestorProductsPresenter {
@@ -30,9 +31,28 @@ final class InvestorProductsPresenter {
         self.service = service
         self.user = user
     }
+    
+    private func requestService() {
+        cancellable = service.getInvestorProducts(accessToken: UserDefaults.standard.getToken()).sink(receiveCompletion: { (error) in
+            print(error)
+        }, receiveValue: { (result) in
+            print(result)
+            switch result {
+            case let .failure(error):
+                print(error)
+            case let .success(model):
+                self.investorModel = model
+            }
+        })
+    }
 }
 
 extension InvestorProductsPresenter: InvestorProductsPresenterProtocol {
+    func reloadView() {
+        requestService()
+        viewController?.reloadTableView()
+    }
+    
     func getProductFor(index: Int) -> ProductResponsesModel? {
         return investorModel?.ProductResponses[index]
     }
@@ -52,18 +72,7 @@ extension InvestorProductsPresenter: InvestorProductsPresenterProtocol {
                     self.viewController?.reloadTableView()
                 }
             }
-        
-        cancellable = service.getInvestorProducts(accessToken: UserDefaults.standard.getToken()).sink(receiveCompletion: { (error) in
-            print(error)
-        }, receiveValue: { (result) in
-            print(result)
-            switch result {
-            case let .failure(error):
-                print(error)
-            case let .success(model):
-                self.investorModel = model
-            }
-        })
+        requestService()
     }
      
     func buildCell(cell: InvestorTableViewCellProtocol, index: Int) {

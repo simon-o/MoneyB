@@ -65,7 +65,9 @@ final class InvestorProductsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let account = self.presenter.getProductFor(index: indexPath.row) {
             let service = AccountService()
-            let presenter = AccountPresenter(service: service, accountInfo: account)
+            let presenter = AccountPresenter(service: service, accountInfo: account) {
+                self.presenter.reloadView()
+            }
             let vc = AccountViewController(presenter: presenter)
             navigationController?.pushViewController(vc, animated: true)
         }
