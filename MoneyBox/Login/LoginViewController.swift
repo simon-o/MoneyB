@@ -12,6 +12,7 @@ protocol LoginViewControllerProtocol: AnyObject {
     func getPassword() -> String
     func loginSuccess()
     func loginFailure()
+    func setButton(title: String)
 }
 
 final class LoginViewController: UIViewController {
@@ -68,5 +69,7 @@ extension LoginViewController: LoginViewControllerProtocol {
         return passwordTextField.text ?? ""
     }
     
-    
+    func setButton(title: String) {
+        buttonLogin.setTitle(title, for: .normal)
+    }
 }

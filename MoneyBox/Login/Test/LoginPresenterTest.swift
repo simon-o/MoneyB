@@ -20,6 +20,15 @@ class LoginPresenterTest: XCTestCase {
         
     }
     
+    func test_setup() {
+        let presenter = LoginPresenter(service: service)
+        
+        presenter.linkViewController(vc)
+        presenter.viewDidLoad()
+        
+        XCTAssertEqual(vc.title, "Login")
+    }
+    
     func test_success() {
         let presenter = LoginPresenter(service: service)
         
@@ -56,6 +65,7 @@ class LoginPresenterTest: XCTestCase {
 class LoginViewControllerMock: LoginViewControllerProtocol {
     var getSuccessCount = 0
     var getFailureCount = 0
+    var title: String?
     let expectation = XCTestExpectation(description: "async")
     
     func getEmail() -> String {
@@ -74,6 +84,10 @@ class LoginViewControllerMock: LoginViewControllerProtocol {
     func loginFailure() {
         getFailureCount += 1
         expectation.fulfill()
+    }
+    
+    func setButton(title: String) {
+        self.title = title
     }
 }
 

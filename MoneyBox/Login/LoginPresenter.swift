@@ -58,6 +58,7 @@ extension LoginPresenter: LoginPresenterProtocol {
     }
     
     func viewDidLoad() {
+        viewController?.setButton(title: "Login")
         cancellable2 = $loginModel.receive(on: DispatchQueue.main)
             .map {return ($0?.Session.BearerToken ?? "") }
             .sink { result in
